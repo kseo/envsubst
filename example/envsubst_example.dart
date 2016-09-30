@@ -4,6 +4,8 @@
 import 'package:envsubst/envsubst.dart';
 
 main() {
-  var awesome = new Awesome();
-  print('awesome: ${awesome.isAwesome}');
+  String input = r'Hello $HOME';
+  String output = envSubst(input);
+  print(output); // print 'Hello /Users/kseo'
 }
+

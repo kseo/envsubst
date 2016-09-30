@@ -1,14 +1,14 @@
 name: envsubst
-description: Environment variables substitution for Dart
+description: Docker-style environment variables substitution for Dart
 version: 0.1.0
 author: Kwang Yul Seo <email@example.com>
 homepage: https://github.com/kseo/envsubst
 
 environment:
-  sdk: '>=1.0.0 <2.0.0'
+  sdk: '>=1.8.0 <2.0.0'
 
-#dependencies:
-#  lib_name: any
+dependencies:
+  parsers: ^0.14.5
 
 dev_dependencies:
   test: '>=0.12.0 <0.13.0'
