@@ -13,7 +13,8 @@ class EnvSubstParser {
       string(r'\$') + alphanum.many1 ^ (x, xs) => new TextNode(x + xs.join(''));
   Parser get _escapedText => _escapedTextPart1 | _escapedTextPart2;
 
-  Parser get _text => noneOf(r'$}\').many1 ^ (xs) => new TextNode(xs.join(''));
+  Parser get _text =>
+      anyChar + noneOf(r'$}\').many ^ (x, xs) => new TextNode(x + xs.join(''));
 
   Parser get _variablePart =>
       alphanum.many1 ^ (xs) => new VariableNode(xs.join(''));

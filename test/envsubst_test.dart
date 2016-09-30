@@ -13,8 +13,19 @@ void main() {
     final user = Platform.environment['USER'];
 
     test('text', () {
-      final input = r'My home is kseo';
-      expect(envSubst(input), 'My home is kseo');
+      var inputs = [
+        r'My home is kseo',
+        r'}',
+        r'\',
+        r'$',
+        r'${',
+        r'\$',
+        r'\${',
+        r'~!@#$%^&*()-=\/{}[]'
+      ];
+      for (final input in inputs) {
+        expect(envSubst(input), input);
+      }
     });
 
     test(r'subst $HOME', () {
