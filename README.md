@@ -1,5 +1,7 @@
 # envsubst
 
+[![Build Status](https://travis-ci.org/kseo/envsubst.svg?branch=master)](https://travis-ci.org/kseo/envsubst)
+
 Docker style environment variables substitution for Dart.
 
 Environment variables are notated either with $variable_name or
