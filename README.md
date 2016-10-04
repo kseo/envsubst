@@ -35,3 +35,8 @@ main() {
 }
 ```
 
+# Other Projects
+
+If you are a Go programmer, see [a8m/envsubst][a8m/envsubst].
+
+[a8m/envsubst]: https://github.com/a8m/envsubst
