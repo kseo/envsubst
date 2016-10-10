@@ -37,5 +37,5 @@ class EnvSubstParser {
   Parser get _node => choice([_escapedText, _substitution, _variable, _text]);
   Parser get _doc => _node.many < eof;
 
-  List<Node> parse(String input) => _doc.parse(input);
+  List<Node> parse(String input) => _doc.parse(input) as List<Node>;
 }
