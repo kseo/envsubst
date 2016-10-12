@@ -25,6 +25,8 @@ for example, will translate to $foo and ${foo} literals respectively.
 
 # Examples
 
+## Using `envsubst` programatically
+
 ```dart
 import 'package:envsubst/envsubst.dart';
 
@@ -33,6 +35,13 @@ main() {
   String output = envSubst(input);
   print(output); // print 'Hello /Users/kseo'
 }
+```
+
+## Using via cli
+
+```
+$ envsubst.dart < input.txt > output.txt
+$ echo 'welcome $HOME' | envsubst
 ```
 
 # Other Projects
