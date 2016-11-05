@@ -30,12 +30,12 @@ void main() {
 
     test(r'subst $HOME', () {
       final input = r'My home is $HOME';
-      expect(envSubst(input), 'My home is ${home}');
+      expect(envSubst(input), 'My home is $home');
     });
 
     test(r'subst ${HOME}', () {
       final input = r'My home is ${HOME}';
-      expect(envSubst(input), 'My home is ${home}');
+      expect(envSubst(input), 'My home is $home');
     });
 
     test(r'subst ${HOME:+/root}', () {
@@ -48,7 +48,7 @@ void main() {
 
     test(r'subst ${HOME:-/root}', () {
       var input = r'My home is ${HOME:-/root}';
-      expect(envSubst(input), 'My home is ${home}');
+      expect(envSubst(input), 'My home is $home');
 
       input = r'My home is ${FOOBAR:-/root}';
       expect(envSubst(input), 'My home is /root');
@@ -56,12 +56,12 @@ void main() {
 
     test(r'subst ${HOME:+$USER}', () {
       final input = r'My home is ${HOME:+$USER}';
-      expect(envSubst(input), 'My home is ${user}');
+      expect(envSubst(input), 'My home is $user');
     });
 
     test(r'subst ${HOME:-$USER}', () {
       final input = r'My home is ${HOME:-$USER}';
-      expect(envSubst(input), 'My home is ${home}');
+      expect(envSubst(input), 'My home is $home');
     });
 
     test(r'escape with \$', () {

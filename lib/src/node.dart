@@ -10,26 +10,26 @@ abstract class Node {
 }
 
 class TextNode implements Node {
-  @override
-  NodeType get nodeType => NodeType.text;
-
   final String text;
 
   TextNode(this.text);
+
+  @override
+  NodeType get nodeType => NodeType.text;
 
   @override
   String toString() => text;
 }
 
 class VariableNode implements Node {
+  final String id;
+
+  VariableNode(this.id);
+
   @override
   NodeType get nodeType => NodeType.variable;
 
-  final String id;
-
   bool get isSet => Platform.environment.containsKey(id);
-
-  VariableNode(this.id);
 
   @override
   String toString() => Platform.environment[id] ?? '';
@@ -38,9 +38,6 @@ class VariableNode implements Node {
 enum ExpType { none, colonDash, colonPlus }
 
 class SubstitutionNode implements Node {
-  @override
-  NodeType get nodeType => NodeType.substitution;
-
   final VariableNode variableNode;
 
   final ExpType expType;
@@ -48,6 +45,9 @@ class SubstitutionNode implements Node {
   final Node defaultNode;
 
   SubstitutionNode(this.variableNode, this.expType, this.defaultNode);
+
+  @override
+  NodeType get nodeType => NodeType.substitution;
 
   @override
   String toString() {

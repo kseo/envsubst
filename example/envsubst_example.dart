@@ -3,7 +3,7 @@
 
 import 'package:envsubst/envsubst.dart';
 
-main() {
+void main() {
   String input = r'Hello $HOME';
   String output = envSubst(input);
   print(output); // print 'Hello /Users/kseo'

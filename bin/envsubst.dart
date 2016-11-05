@@ -7,7 +7,7 @@ import 'dart:io';
 
 import 'package:envsubst/envsubst.dart';
 
-main() {
+void main() {
   stdin
       .transform(new Utf8Decoder())
       .transform(new EnvSubst())
